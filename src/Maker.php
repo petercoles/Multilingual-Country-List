@@ -2,8 +2,6 @@
 
 namespace PeterColes\Countries;
 
-use Exception;
-
 class Maker
 {
     protected $countries = null;
