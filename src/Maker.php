@@ -19,7 +19,7 @@ class Maker
         return $this->countries;
     }
 
-    public function keyValue($locale = 'en', $key = 'key', $value = 'value', $reverse = false)
+    public function keyValue($locale = 'en', $key = 'key', $value = 'value')
     {
         $this->prep($locale);
 
