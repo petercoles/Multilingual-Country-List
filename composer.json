@@ -1,5 +1,5 @@
 {
-  "name": "petercoles/countries",
+  "name": "petercoles/multilingual-country-list",
   "type": "library",
   "description": "Lookup Objects for ISO 3166 Country Names and Codes",
   "keywords": ["country lists", "country lookup", "country codes", "ISO 3166", "laravel"],
@@ -13,12 +13,12 @@
     }
   ],
   "support": {
-      "issues": "https://github.com/petercoles/countries/issues"
+      "issues": "https://github.com/petercoles/multilingual-country-list/issues"
   },
   "repositories": [
       {
           "type": "vcs",
-          "url": "https://github.com/umpirsky/country-list.git"
+          "url": "https://github.com/petercoles/multilingual-country-list.git"
       }
   ],
   "require": {
