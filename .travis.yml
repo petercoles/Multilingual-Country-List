@@ -1,0 +1,14 @@
+language: php
+
+php:
+  - 5.6
+  - 7.0
+
+env:
+  matrix:
+    - PREFER_LOWEST="--prefer-lowest"
+    - PREFER_LOWEST=""
+
+before_script:
+  - composer self-update
+  - composer update --prefer-source $PREFER_LOWEST
