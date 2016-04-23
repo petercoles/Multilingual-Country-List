@@ -25,7 +25,7 @@ class Maker
         $value = $value ?: 'value';
 
         return $this->countries->transform(function($item, $index) use ($key, $value) {
-            return (object) [$key => $index, $value =>$item];
+            return (object) [ $key => $index, $value =>$item ];
         })->values(); 
     }
 
