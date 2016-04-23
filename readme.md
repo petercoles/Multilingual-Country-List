@@ -7,7 +7,7 @@
 
 ## Introduction
 
-I've lost count of the number of time that I've carefully edited a list of 250 of so countries to create the data needed for a select field on a form - and that's just for one language. This thin Laravel wrapper around the awesome country-list package, consigns that tedious task to the trash bin of history.
+I've lost count of the number of time that I've carefully edited a list of 250 of so countries to create the data needed for a select field on a form - and that's just for one language. This thin Laravel wrapper around [Umpirsky's awesome country-list package](https://github.com/umpirsky/country-list), consigns that tedious task and ongoing maintenance of those lists to the trash bin of history.
 
 The package provides easy access, through a simple API, to country names in an enormously large number of language and locale settings, together with their ISO-3166 alpha-2 two-letter country codes.
 
@@ -39,11 +39,11 @@ An optional facade is also available and can be enabled by adding the following 
 
 ## Usage
 
-Once installed the package exposes two API methods: lookup() and keyValue() each of which returns a list of countries ordered by the country name in the language being used.
+Once installed the package exposes two API methods: lookup() and keyValue(), each of which returns a list of countries ordered by the country name in the language being used.
 
 ### Lookup
 
-The lookup method takes two optional parameters: $locale (default 'en') and $flip (default false) and returns a collection. This collection will be cast to a json object by Laravel if returned as a response, or can be cast to an array if needed with the toArray() method.
+The ```lookup``` method takes two optional parameters: $locale (default 'en') and $flip (default false) and returns a collection. This collection will be cast to a json object by Laravel if returned as a response, or can be cast to an array if needed with the toArray() method.
 
 Locales can be expressed as a language code, e.g. 'fr', or a full locale code, e.g. zh_CN.
 
@@ -55,6 +55,7 @@ The default is English.
 Countries::lookup();
 
 // returns
+
 {
   "AF": "Afghanistan",
   ...
@@ -63,12 +64,13 @@ Countries::lookup();
 
 ```
 
-The flip parameter facilitates reverse lookups, e.g. for typahead components that recognize values, but don't support keys.
+The flip parameter facilitates reverse lookups, e.g. for typahead components that recognize values, but don't support keys, requiring the key to obtained later.
 
 ```
 Countries::lookup('es', true);  // default is English
 
 // returns
+
 {  
   "Afganistán": "AF",
   ...
@@ -82,6 +84,7 @@ Non-latin character sets are supported too, including locale settings
 Countries::lookup('zh_CN');  // default is English
 
 // returns
+
 {
   "AL": "阿尔巴尼亚",
   ...
@@ -90,10 +93,9 @@ Countries::lookup('zh_CN');  // default is English
 
 ```
 
-
 ### keyValue
 
-The keyValue method takes three optional parameters: $locale (default 'en'), $key (default 'key') and $value (default 'value').
+The ```keyValue``` method takes three optional parameters: $locale (default 'en'), $key (default 'key') and $value (default 'value').
 
 #### Examples
 
@@ -101,17 +103,21 @@ The dafault is still English.
 ```
 Countries::keyValue('zh', 'label', 'text');
 
+// returns
+
 [
   {"key": "AF", "value": "Afghanistan"},
   ...
-  {"key": "HK", "value": "中国香港特别行政区"}
+  {"key": "ZW", "value": "Zimbabwe"}
 ]
 ```
 
-
+If you need a key-value list with custom indices, then the $key and $value parameters can be used to redfine them. this might be the case, for example, if you're using a javascript component to generate a select field and that component has expectations as to the indices used in the data that it receoves.
 
 ```
 Countries::keyValue('zh', 'label', 'text');
+
+// returns
 
 [
   {"label": "AL", "text": "阿尔巴尼亚"},
@@ -120,10 +126,24 @@ Countries::keyValue('zh', 'label', 'text');
 ]
 ```
 
-
 ## Issues
 
-This package was developed to meet a specific need and then generalised for wider use. If you have a use case not currently met, or see something that appears to not be working correctly, please raise an issue at the [github repo](https://github.com/petercoles/countries/issues)
+If you're using PHP7 then there's a temporary wrinkle that you'll need to work around. The umpirsky package _had_ an unfortunate composer constraint that made it incompatible with PHP7. That's now been removed but not tagged. Until it is you will need to explicitly load a dev version of that package in the root of your project (sorry). This can be done by adding the following to your project's composer.json file:
+```
+    "repositories": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/umpirsky/country-list.git"
+        }
+    ],
+    "require": {
+        ...
+        "umpirsky/country-list": "@dev",
+        ...
+    },
+```
+
+More generally, this package was developed to meet a specific need and then generalised for wider use. If you have a use case not currently met, or see something that appears to not be working correctly, please raise an issue at the [github repo](https://github.com/petercoles/countries/issues)
 
 ## License
 
