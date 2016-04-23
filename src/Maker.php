@@ -6,11 +6,11 @@ class Maker
 {
     protected $countries = null;
 
-    public function lookup($locale = 'en', $reverse = false)
+    public function lookup($locale = 'en', $flip = false)
     {
         $this->prep($locale);
 
-        if ($reverse) {
+        if ($flip) {
             return $this->countries->flip();
         }
 
