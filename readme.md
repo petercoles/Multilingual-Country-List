@@ -18,7 +18,7 @@ Data can be returned as a lookup array or an array of key-value pairs, where bot
 At the command line run
 
 ```
-composer require petercoles/countries
+composer require petercoles/multilingual-country-list
 ```
 
 then add the service provider to the providers entry in your config/app.php file
