@@ -7,6 +7,8 @@
 
 ## Introduction
 
+I've lost count of the number of time that I've carefully edited a list of 250 of so countries to create the data needed for a select field on a form. This thin Laravel wrapper around the awesome country-list package, consigns that tedious task to history.
+
 ISO 3166 http://www.iso.org/iso/country_codes
 
 ## Installation
