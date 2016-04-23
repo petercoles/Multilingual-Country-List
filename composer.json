@@ -1,0 +1,38 @@
+{
+  "name": "petercoles/countries",
+  "type": "library",
+  "description": "Lookup Objects for ISO 3166 Country Names and Codes",
+  "keywords": ["country lists", "country lookup", "country codes", "ISO 3166", "laravel"],
+  "homepage": "https://github.com/petercoles/countries",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Peter Coles",
+      "email": "peterdcoles@gmail.com",
+      "homepage": "http://petercoles.com"
+    }
+  ],
+  "support": {
+      "issues": "https://github.com/petercoles/countries/issues"
+  },
+  "repositories": [
+      {
+          "type": "vcs",
+          "url": "https://github.com/umpirsky/country-list.git"
+      }
+  ],
+  "require": {
+    "php": ">=5.6.0",
+    "illuminate/support": "~5",
+    "umpirsky/country-list": "dev-master#9d3e3cee31ba3ca77514f9fbfd6d775b138f66dd"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~5.0",
+    "mockery/mockery": "^0.9.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "PeterColes\\Countries\\": "src/"
+    }
+  }
+}
