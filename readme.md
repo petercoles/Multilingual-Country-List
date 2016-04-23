@@ -99,7 +99,7 @@ The ```keyValue``` method takes three optional parameters: $locale (default 'en'
 
 #### Examples
 
-The dafault is still English.
+The default is still English.
 ```
 Countries::keyValue('zh', 'label', 'text');
 
