@@ -2,7 +2,7 @@
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/petercoles/Countries/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/petercoles/Countries/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/petercoles/Countries/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/petercoles/Countries/?branch=master)
-[![Build Status](https://travis-ci.org/petercoles/Countries.svg?branch=master)](https://travis-ci.org/petercoles/Countries)
+[![Build Status](https://scrutinizer-ci.com/g/petercoles/Countries/badges/build.png?b=master)](https://scrutinizer-ci.com/g/petercoles/Countries/build-status/master)
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
 
 ## Introduction
