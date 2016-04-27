@@ -67,7 +67,7 @@ Countries::lookup();
 The flip parameter facilitates reverse lookups, e.g. for typahead components that recognize values, but don't support keys, requiring the key to obtained later.
 
 ```
-Countries::lookup('es', true);  // default is English
+Countries::lookup('es', true);
 
 // returns
 
@@ -81,7 +81,7 @@ Countries::lookup('es', true);  // default is English
 
 Non-latin character sets are supported too, including locale settings
 ```
-Countries::lookup('zh_CN');  // default is English
+Countries::lookup('zh_CN');
 
 // returns
 
