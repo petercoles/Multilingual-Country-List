@@ -33,7 +33,7 @@ class Maker
     {
         if (!$this->countries) {
             $locale = $locale ?: 'en';
-            $this->countries = collect(require base_path("data/$locale.php"));            
+            $this->countries = collect(require realpath(__DIR__."/../data/$locale.php"));             
         }
     }
 }
