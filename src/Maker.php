@@ -33,8 +33,7 @@ class Maker
     {
         if (!$this->countries) {
             $locale = $locale ?: 'en';
-            $path = base_path("vendor/umpirsky/country-list/data/$locale/country.json");
-            $this->countries = collect(json_decode(file_get_contents($path)));
+            $this->countries = collect(require base_path("data/$locale.php"));            
         }
     }
 }
