@@ -128,22 +128,7 @@ Countries::keyValue('zh', 'label', 'text');
 
 ## Issues
 
-If you're using PHP7 then there's a temporary wrinkle that you'll need to work around. The umpirsky package _had_ an unfortunate composer constraint that made it incompatible with PHP7. That's now been removed but not tagged. Until it is you will need to explicitly load a dev version of that package in the root of your project (sorry). This can be done by adding the following to your project's composer.json file:
-```
-    "repositories": [
-        {
-          "type": "vcs",
-          "url": "https://github.com/umpirsky/country-list.git"
-        }
-    ],
-    "require": {
-        ...
-        "umpirsky/country-list": "@dev",
-        ...
-    },
-```
-
-More generally, this package was developed to meet a specific need and then generalised for wider use. If you have a use case not currently met, or see something that appears to not be working correctly, please raise an issue at the [github repo](https://github.com/petercoles/countries/issues)
+This package was developed to meet a specific need and then generalised for wider use. If you have a use case not currently met, or see something that appears to not be working correctly, please raise an issue at the [github repo](https://github.com/petercoles/countries/issues)
 
 ## License
 
