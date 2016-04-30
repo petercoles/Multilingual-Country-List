@@ -3,7 +3,7 @@
   "type": "library",
   "description": "Lookup Objects for ISO 3166 Country Names and Codes",
   "keywords": ["country lists", "country lookup", "country codes", "ISO 3166", "laravel"],
-  "homepage": "https://github.com/petercoles/countries",
+  "homepage": "https://github.com/petercoles/multilingualcountry-list",
   "license": "MIT",
   "authors": [
     {
