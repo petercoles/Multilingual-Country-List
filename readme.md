@@ -26,7 +26,7 @@ then add the service provider to the providers entry in your config/app.php file
 ```
     'providers' => [
         // ...
-        PeterColes\LiveOrLetDie\Providers\CountriesServiceProvider::class,
+        PeterColes\Countries\CountriesServiceProvider::class,
         // ...
     ],
 ```
