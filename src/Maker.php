@@ -4,6 +4,8 @@ namespace PeterColes\Countries;
 
 class Maker
 {
+    protected $countries = null;
+
     public function lookup($locale = 'en', $flip = false)
     {
         $this->prep($locale);
