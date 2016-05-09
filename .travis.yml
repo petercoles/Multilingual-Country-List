@@ -6,3 +6,4 @@ php:
 
 before_script:
   - composer self-update
+  - composer update --prefer-source
