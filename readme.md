@@ -32,7 +32,7 @@ then add the service provider to the providers entry in your config/app.php file
     ],
 ```
 
-An optional facade is also available and can be enabled by adding the following to you config/app.php's aliases array
+An optional facade is also available and can be enabled by adding the following to the aliases array in your config/app.php file.
 
 ```
 'Countries' => PeterColes\Countries\CountriesFacade::class,
