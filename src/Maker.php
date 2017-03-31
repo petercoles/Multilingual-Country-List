@@ -31,7 +31,10 @@ class Maker
 
     protected function prep($locale)
     {
-        $locale = $locale ?: 'en';
+        if ( file_exists(realpath(__DIR__."/../data/$locale.php")) === false ) {
+            $locale = 'en';
+        }
+        
         $this->countries = collect(require realpath(__DIR__."/../data/$locale.php"));             
     }
 }
