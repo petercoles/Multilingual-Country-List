@@ -2,6 +2,8 @@
 
 namespace PeterColes\Countries;
 
+use Exception;
+
 class Maker
 {
     protected $countries = null;
@@ -32,6 +34,12 @@ class Maker
     protected function prep($locale)
     {
         $locale = $locale ?: 'en';
-        $this->countries = collect(require realpath(__DIR__."/../data/$locale.php"));             
+        $localeFile = realpath(__DIR__."/../data/$locale.php");
+
+        if (!file_exists($localeFile)) {
+            throw new Exception("Locale: <$locale> not recognised.");
+        }
+
+        $this->countries = collect(require $localeFile);
     }
 }
