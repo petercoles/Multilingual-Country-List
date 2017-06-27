@@ -1,0 +1,27 @@
+<?php
+
+class ResultManipulationTest extends \PHPUnit_Framework_TestCase
+{
+    protected $maker;
+        
+    public function setUp()
+    {
+        $this->maker = new PeterColes\Countries\Maker;
+    }
+
+    public function testAddCountry()
+    {
+        $lookup = $this->maker->lookup()->put('ZZ', 'My Country')->sort();
+
+        $this->assertEquals('My Country', $lookup['ZZ']);
+    }
+
+    public function testRemoveRegions()
+    {
+        $lookup = $this->maker->lookup()->reject(function($country, $key) {
+            return in_array($key, [ 'IC', 'TD' ]);
+        });
+
+        $this->assertArrayNotHasKey('IC', $lookup->toArray());
+    }
+}
