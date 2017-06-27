@@ -247,11 +247,11 @@ return array(
     'NC' => 'Uus-Kaledoonia',
     'NZ' => 'Uus-Meremaa',
     'BY' => 'Valgevene',
-    'WF' => 'Wallis ja Futuna',
     'VU' => 'Vanuatu',
     'VA' => 'Vatikan',
     'RU' => 'Venemaa',
     'VE' => 'Venezuela',
     'VN' => 'Vietnam',
+    'WF' => 'Wallis ja Futuna',
     'UM' => 'Ühendriikide hajasaared',
 );
