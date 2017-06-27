@@ -24,4 +24,14 @@ class ResultManipulationTest extends \PHPUnit_Framework_TestCase
 
         $this->assertArrayNotHasKey('IC', $lookup->toArray());
     }
+
+    public function testReplaceKey()
+    {
+        $lookup = $this->maker->lookup()->mapWithKeys(function($country, $key) {
+            return $key == 'XK' ? [ 'KV' => $country ] : [ $key => $country ];
+        });
+
+        $this->assertArrayNotHasKey('XK', $lookup->toArray());
+        $this->assertEquals('Kosovo', $lookup['KV']);
+    }
 }
