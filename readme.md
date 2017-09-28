@@ -129,6 +129,51 @@ Countries::keyValue('zh', 'label', 'text');
 ]
 ```
 
+### Tweaking
+
+So, you've got a list of countries, but it doesn't quite meet your needs. Since the lookup and keyValue methods return Laravel collections, tweaking the results is super easy.
+
+#### Filtering
+
+The data from which these lists are drawn includes "Eurozone" and, despite some politicans wishes, that's not really a country. Let's remove it.
+
+```
+Countries::lookup()->reject(function($country, $key) {
+    return $key == 'EZ';
+});
+```
+
+There are also some entries that may be considered parts of other countries. Without getting into the politics, let's also remove the Canary Islands (Spain) and Guadeloupe (France).
+
+```
+Countries::lookup()->reject(function($country, $key) {
+    return in_array($key, [ 'EZ', 'IC', 'GP' ]);
+});
+```
+
+#### Modifying
+
+Also, we know that the international code for the United Kingdom is "GB", but our payment gateway is expecteding "UK". So lets change that.
+
+```
+Countries::lookup()->mapWithKeys(function($country, $key) {
+    return $key == 'GB' ? [ 'UK' => $country ] : [ $key => $country ];
+});
+```
+
+#### Adding
+
+The number of recognized countries is growing, but not always as fast as changes on the ground, so, with no comment on the political rights and wrongs, let's add a new one.
+
+```
+Countries::lookup()->->put('CT', 'Catalonia')->sort();
+```
+
+A few warnigs here:*
+* Do check that the code isn't being already.
+* Do remember to sort the list after making the addition.
+* Don't forget to keep checking the list so that you can remove your addition if it becomes official.
+
 ## Issues
 
 This package was developed to meet a specific need and then generalised for wider use. If you have a use case not currently met, or see something that appears to not be working correctly, please raise an issue at the [github repo](https://github.com/petercoles/countries/issues)
