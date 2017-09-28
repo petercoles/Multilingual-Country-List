@@ -169,7 +169,7 @@ The number of recognized countries is growing, but not always as fast as changes
 Countries::lookup()->->put('CT', 'Catalonia')->sort();
 ```
 
-A few warnigs here:*
+A few warnings here:
 * Do check that the code isn't being already.
 * Do remember to sort the list after making the addition.
 * Don't forget to keep checking the list so that you can remove your addition if it becomes official.
