@@ -13,7 +13,7 @@ class KeyValueTest extends \PHPUnit_Framework_TestCase
     {
         $keyValue = $this->maker->keyValue();
 
-        $this->assertEquals(253, $keyValue->count());
+        $this->assertEquals(255, $keyValue->count());
         $this->assertEquals((object)[ 'key' => 'AF', 'value' => 'Afghanistan' ], $keyValue->first());
     }
 
