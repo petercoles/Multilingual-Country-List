@@ -250,8 +250,10 @@ return array(
     'EA' => 'Ceuta & Melilla',
     'CW' => 'Curaçao',
     'DG' => 'Diego Garcia',
+    'EZ' => 'Eurozone',
     'XK' => 'Kosovo',
     'SX' => 'Sint Maarten',
     'SS' => 'South Sudan',
     'TA' => 'Tristan da Cunha',
+    'UN' => 'United Nations',
 );

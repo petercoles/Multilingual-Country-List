@@ -11,6 +11,7 @@ return array(
     'CC' => 'Cocos (Keeling) Islands',
     'CW' => 'Curaçao',
     'DG' => 'Diego Garcia',
+    'EZ' => 'Eurozone',
     'FO' => 'Faroe Islands',
     'TF' => 'French Southern Territories',
     'GG' => 'Guernsey',
@@ -253,5 +254,6 @@ return array(
     'SJ' => 'Svalbard & Jan Mayen',
     'TA' => 'Tristan da Cunha',
     'UM' => 'U.S. Outlying Islands',
+    'UN' => 'United Nations',
     'EH' => 'Western Sahara',
 );

@@ -1,7 +1,9 @@
 <?php
 
 return array(
+    'EZ' => 'Eurozone',
     'XK' => 'Kosovo',
+    'UN' => 'United Nations',
     'QA' => 'ཀ་ཊར',
     'IC' => 'ཀ་ནེ་རི་གླིང་ཚོམ',
     'KZ' => 'ཀ་ཛགས་སཏཱན',
