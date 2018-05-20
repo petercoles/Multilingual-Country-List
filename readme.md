@@ -8,7 +8,7 @@
 
 ## Introduction
 
-I've lost count of the number of time that I've carefully edited a list of 250 of so countries to create the data needed for a select field on a form - and that's just for one language. This thin Laravel wrapper around an industry-maintained list of country names in many, many languages, consigns that tedious task and ongoing maintenance of those lists to the trash bin of history.
+I've lost count of the number of times that I've carefully edited a list of 250 of so countries to create the data needed for a select field on a form - and that's just for one language. This thin Laravel wrapper around an industry-maintained list of country names in many, many languages, consigns that tedious task and ongoing maintenance of those lists to the trash bin of history.
 
 The package provides easy access, through a simple API, to country names in an enormously large number of language and locale settings, together with their ISO-3166 alpha-2 two-letter country codes.
 
