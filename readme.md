@@ -22,7 +22,7 @@ At the command line run
 composer require petercoles/multilingual-country-list
 ```
 
-If you're using Laravel 5.5 (and haven't disabled package discovery), you're done. Move on to the usage section below.
+If you're using Laravel 5.5 or later (and haven't disabled package discovery), you're done. Move on to the usage section below.
 
 If you're using an older version of Laravel, then add the service provider to the providers entry in your config/app.php file
 
