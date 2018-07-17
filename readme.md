@@ -18,7 +18,7 @@ Data can be returned as a lookup array or an array of key-value pairs, where bot
 
 At the command line run
 
-```
+```shell
 composer require petercoles/multilingual-country-list
 ```
 
@@ -26,7 +26,7 @@ If you're using Laravel 5.5 or later (and haven't disabled package discovery), y
 
 If you're using an older version of Laravel, then add the service provider to the providers entry in your config/app.php file
 
-```
+```php
     'providers' => [
         // ...
         PeterColes\Countries\CountriesServiceProvider::class,
@@ -36,7 +36,7 @@ If you're using an older version of Laravel, then add the service provider to th
 
 An optional facade is also available and can be enabled by adding the following to the aliases array in your config/app.php file.
 
-```
+```php
 'Countries' => PeterColes\Countries\CountriesFacade::class,
 ```
 
@@ -54,7 +54,7 @@ Locales can be expressed as a language code, e.g. 'fr', or a full locale code, e
 
 The default is English.
 
-```
+```php
 Countries::lookup();
 
 // returns
@@ -69,7 +69,7 @@ Countries::lookup();
 
 The flip parameter facilitates reverse lookups, e.g. for typahead components that recognize values, but don't support keys, requiring the key to obtained later.
 
-```
+```php
 Countries::lookup('es', true);
 
 // returns
@@ -83,7 +83,7 @@ Countries::lookup('es', true);
 ```
 
 Non-latin character sets are supported too, including locale settings
-```
+```php
 Countries::lookup('zh_CN');
 
 // returns
@@ -103,7 +103,7 @@ The ```keyValue``` method takes three optional parameters: $locale (default 'en'
 #### Examples
 
 The default is still English.
-```
+```php
 Countries::keyValue();
 
 // returns
@@ -117,7 +117,7 @@ Countries::keyValue();
 
 If you need a key-value list with custom indices, then the $key and $value parameters can be used to redfine them. this might be the case, for example, if you're using a javascript component to generate a select field and that component has expectations as to the indices used in the data that it receoves.
 
-```
+```php
 Countries::keyValue('zh', 'label', 'text');
 
 // returns
@@ -137,7 +137,7 @@ So, you've got a list of countries, but it doesn't quite meet your needs. Since 
 
 The data from which these lists are drawn includes "Eurozone" and, despite some politicans wishes, that's not really a country. Let's remove it.
 
-```
+```php
 Countries::lookup()->reject(function($country, $key) {
     return $key == 'EZ';
 });
@@ -145,7 +145,7 @@ Countries::lookup()->reject(function($country, $key) {
 
 There are also some entries that may be considered parts of other countries. Without getting into the politics, let's also remove the Canary Islands (Spain) and Guadeloupe (France).
 
-```
+```php
 Countries::lookup()->reject(function($country, $key) {
     return in_array($key, [ 'EZ', 'IC', 'GP' ]);
 });
@@ -155,7 +155,7 @@ Countries::lookup()->reject(function($country, $key) {
 
 Also, we know that the international code for the United Kingdom is "GB", but our payment gateway is expecteding "UK". So lets change that.
 
-```
+```php
 Countries::lookup()->mapWithKeys(function($country, $key) {
     return $key == 'GB' ? [ 'UK' => $country ] : [ $key => $country ];
 });
@@ -165,8 +165,8 @@ Countries::lookup()->mapWithKeys(function($country, $key) {
 
 The number of recognized countries is growing, but not always as fast as changes on the ground, so, with no comment on the political rights and wrongs, let's add a new one.
 
-```
-Countries::lookup()->->put('CT', 'Catalonia')->sort();
+```php
+Countries::lookup()->put('CT', 'Catalonia')->sort();
 ```
 
 A few warnings here:
