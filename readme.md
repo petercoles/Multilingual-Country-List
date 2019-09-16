@@ -50,7 +50,7 @@ The ```lookup``` method takes two optional parameters: $locale (default 'en') an
 
 Locales can be expressed as a language code, e.g. 'fr', or a full locale code, e.g. zh_CN.
 
-#### Examples
+#### Lookup Examples
 
 The default is English.
 
@@ -83,6 +83,7 @@ Countries::lookup('es', true);
 ```
 
 Non-latin character sets are supported too, including locale settings
+
 ```php
 Countries::lookup('zh_CN');
 
@@ -100,9 +101,10 @@ Countries::lookup('zh_CN');
 
 The ```keyValue``` method takes three optional parameters: $locale (default 'en'), $key (default 'key') and $value (default 'value').
 
-#### Examples
+#### Key Value Examples
 
 The default is still English.
+
 ```php
 Countries::keyValue();
 
@@ -170,6 +172,7 @@ Countries::lookup()->put('CT', 'Catalonia')->sort();
 ```
 
 A few warnings here:
+
 * Do check that the code isn't being already.
 * Do remember to sort the list after making the addition.
 * Don't forget to keep checking the list so that you can remove your addition if it becomes official.
