@@ -1,10 +1,12 @@
 <?php
 
-class KeyValueTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class KeyValueTest extends TestCase
 {
     protected $maker;
         
-    public function setUp()
+    public function setUp(): void
     {
         $this->maker = new PeterColes\Countries\Maker;
     }
