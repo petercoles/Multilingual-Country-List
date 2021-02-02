@@ -183,9 +183,7 @@ This package was developed to meet a specific need and then generalised for wide
 
 ## Contributions
 
-Contributions are welcome, but will generally need tests. I recommed raising an issue first so that proposed changes or enhancements can be discussed before development starts.
-
-Docker and VS Code users can spin the package up in a [development container](https://code.visualstudio.com/docs/remote/containers). The container takes forever for build, so be patient, but that's normally a one-off process. Once complete the tests can be run with ```vendor/bin/phpunit```.
+Contributions are welcome, but will generally need tests. I recommend raising an issue first so that proposed changes or enhancements can be discussed before development starts.
 
 ## License
 
