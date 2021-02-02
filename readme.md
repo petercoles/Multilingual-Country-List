@@ -181,6 +181,12 @@ A few warnings here:
 
 This package was developed to meet a specific need and then generalised for wider use. If you have a use case not currently met, or see something that appears to not be working correctly, please raise an issue at the [github repo](https://github.com/petercoles/countries/issues).
 
+## Contributions
+
+Contributions are welcome, but will generally need tests. I recommed raising an issue first so that proposed changes or enhancements can be discussed before development starts.
+
+Docker and VS Code users can spin the package up in a [development container](https://code.visualstudio.com/docs/remote/containers). The container takes forever for build, so be patient, but that's normally a one-off process. Once complete the tests can be run with ```vendor/bin/phpunit```.
+
 ## License
 
 This package is licensed under the [MIT license](http://opensource.org/licenses/MIT).
