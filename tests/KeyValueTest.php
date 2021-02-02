@@ -15,7 +15,7 @@ class KeyValueTest extends TestCase
     {
         $keyValue = $this->maker->keyValue();
 
-        $this->assertEquals(255, $keyValue->count());
+        $this->assertEquals(249, $keyValue->count());
         $this->assertEquals((object)[ 'key' => 'AF', 'value' => 'Afghanistan' ], $keyValue->first());
     }
 

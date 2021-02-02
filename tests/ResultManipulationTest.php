@@ -30,10 +30,10 @@ class ResultManipulationTest extends TestCase
     public function testReplaceKey()
     {
         $lookup = $this->maker->lookup()->mapWithKeys(function($country, $key) {
-            return $key == 'XK' ? [ 'KV' => $country ] : [ $key => $country ];
+            return $key == 'GB' ? [ 'UK' => $country ] : [ $key => $country ];
         });
 
-        $this->assertArrayNotHasKey('XK', $lookup->toArray());
-        $this->assertEquals('Kosovo', $lookup['KV']);
+        $this->assertArrayNotHasKey('GB', $lookup->toArray());
+        $this->assertEquals('United Kingdom', $lookup['UK']);
     }
 }
