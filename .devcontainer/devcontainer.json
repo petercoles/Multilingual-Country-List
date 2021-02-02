@@ -1,22 +1,25 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.155.1/containers/docker-existing-dockerfile
 {
-	"name": "Existing Dockerfile",
+	"name": "Laravel Package",
 
 	// Sets the run context to one level up instead of the .devcontainer folder.
 	"context": "..",
 
 	// Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
-	"dockerFile": "../Dockerfile",
+	"dockerFile": "Dockerfile",
 
 	// Set *default* container specific settings.json values on container create.
 	"settings": { 
-		"terminal.integrated.shell.linux": null
+		"terminal.integrated.shell.linux": "/bin/bash"
 	},
 
-	// We don't use any vscode extensions
-	"extensions": [],
+	// Useful VS Code extensions
+	"extensions": [
+		"felixbecker.php-debug",
+		"felixbecker.php-intellisense",
+	],
 
-	// 
+	// Install Composer Packages
 	"postCreateCommand": "apt-get update && apt-get install -y git && composer update --prefer-source",
 }
