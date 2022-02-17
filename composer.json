@@ -22,7 +22,7 @@
         "issues": "https://github.com/petercoles/multilingual-country-list/issues"
     },
     "require": {
-        "php": ">=7.2",
+        "php": ">=7.4",
         "illuminate/support": "~5|~6|~7|~8|~9"
     },
     "require-dev": {
