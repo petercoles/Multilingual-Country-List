@@ -31,6 +31,24 @@ class Maker
         })->values(); 
     }
 
+    /**
+     * Get translated country name
+     * @param $isoCode
+     * @param $locale
+     * @return void
+     * @throws Exception
+     */
+    public function getCountryName($isoCode, $locale = 'en')
+    {
+        $this->prep($locale);
+
+        $isoCode = strtoupper($isoCode);
+
+        if ($this->countries->has($isoCode)) {
+            return $this->countries->get($isoCode);
+        }
+    }
+
     protected function prep($locale)
     {
         $locale = $locale ?: 'en';
