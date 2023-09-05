@@ -131,6 +131,20 @@ Countries::keyValue('zh', 'label', 'text');
 ]
 ```
 
+### Country Names
+
+If you just want to get the name of a country for a particular locale, then passing the $isoCode and $locale (default 'en') to the countryName method will return the requested text.
+
+#### Country Name Example
+
+```php
+Countries::countryName('BE', 'fr')
+
+// returns
+
+'Belgique'
+```
+
 ### Tweaking
 
 So, you've got a list of countries, but it doesn't quite meet your needs. Since the lookup and keyValue methods return Laravel collections, tweaking the results is super easy.
