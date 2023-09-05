@@ -1,7 +1,5 @@
 # Multilingual Country Lists for Laravel
 
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/18292467-2547-461a-89bc-c0f77a1be286/mini.png)](https://insight.sensiolabs.com/projects/18292467-2547-461a-89bc-c0f77a1be286)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/petercoles/Multilingual-Country-List/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/petercoles/Multilingual-Country-List/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/petercoles/Multilingual-Country-List/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/petercoles/Multilingual-Country-List/?branch=master)
 [![Build Status](https://travis-ci.org/petercoles/Multilingual-Country-List.svg?branch=master)](https://travis-ci.org/petercoles/Multilingual-Country-List)
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
