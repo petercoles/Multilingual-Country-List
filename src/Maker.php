@@ -31,6 +31,19 @@ class Maker
         })->values(); 
     }
 
+    public function countryName($isoCode, $locale = 'en')
+    {
+        $this->prep($locale);
+
+        $isoCode = strtoupper($isoCode);
+
+        if (!$this->countries->has($isoCode)) {
+            throw new Exception("No country name found for ISO code: $isoCode and locale: $locale.");
+        }
+
+        return $this->countries->get($isoCode);
+    }
+
     protected function prep($locale)
     {
         $locale = $locale ?: 'en';
