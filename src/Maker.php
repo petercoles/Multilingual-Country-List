@@ -6,17 +6,17 @@ use Exception;
 
 class Maker
 {
-    protected $countries = null;
+    protected $countries = [];
 
     public function lookup($locale = 'en', $flip = false)
     {
         $this->prep($locale);
 
         if ($flip) {
-            return $this->countries->flip();
+            return $this->countries[$locale]->flip();
         }
 
-        return $this->countries;
+        return $this->countries[$locale];
     }
 
     public function keyValue($locale = 'en', $key = 'key', $value = 'value')
@@ -26,7 +26,7 @@ class Maker
         $key = $key ?: 'key';
         $value = $value ?: 'value';
 
-        return $this->countries->transform(function($item, $index) use ($key, $value) {
+        return $this->countries[$locale]->transform(function($item, $index) use ($key, $value) {
             return (object) [ $key => $index, $value =>$item ];
         })->values(); 
     }
@@ -46,6 +46,10 @@ class Maker
 
     protected function prep($locale)
     {
+        if (array_key_exists($locale, $this->countries)) {
+            return;
+        }
+        
         $locale = $locale ?: 'en';
         $localeFile = realpath(__DIR__."/../data/$locale.php");
 
